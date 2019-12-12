@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Mrs+Sheppards&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #170727;
+    color: #00EAAD;
+    /* font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    color: #00EAAD;
+}
+
+a:hover {
+    color: #00EAAD;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.lead {
+    font-family: 'Mrs Sheppards', cursive;
+}
+
+.caption {
+    font-size: 0.75rem;
+}
+
+/* OVERRIDE */
+.bg-dark {
+    background-color: transparent !important;
+}
+
+.navbar-collapse {
+    flex-grow: unset;
+}
+
+nav {
+    grid-area: nav;
+    /* margin-left: 0.5rem; */
+}
+
+.navbar {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+.navbar-light .navbar-brand {
+    color: white !important;
+}
+
+nav ul li {
+    display: grid;
+    grid-template-columns: repeat(1fr, 1fr, 1fr);
+    grid-column-gap: 15px;
+    text-align: right;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+.logo {
+    justify-self: start;
+    align-self: center;
+    height: 28px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    margin-left: 15%;
+    margin-right: 15%;
+
+    display: grid;
+    grid-area: header;
+    grid-template-areas: "header" "main";
+    grid-gap: 15px 10px;
+    grid-template-rows: auto;
+}
+
+footer {
+    grid-area: footer;
+}
+
+header.lead {
+    display: block;
+    
+    height: 65vh;
+    /* margin-top: 120px; */
+    text-align: center;
+    /* vertical-align: middle; */
+    width: 100%;
+    padding: 0 20px;
+}
+
+main .lead p {
+    font-size: 8rem;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    text-shadow: violet 0 6px 0;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-area: main;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+}
+
+.gallery .thumb {
+    align-self: auto;
+    background-color: white;
+    border-radius: 2px;
+    justify-self: stretch;
+    text-align: center;
+    overflow: hidden;
+}
+
+.gallery .thumb:hover {
+    /* transform: scale(1.2) translateZ(0); */
+    
+}
+
+.gallery .thumb a {
+    color: transparent;
+    
+    font-size: 1.6rem;
+    font-weight: 700;
+    
+    text-decoration: none;
+    width: 100%;
+    height: 55vh;
+
+    display: grid;
+    align-content: center;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    /* display: block; */
+    /* padding: 160px 15px; */
+
+    /* position: relative; */
+    /* top: 50%; */
+    /* transform: translate(0, -50%); */
+
+    /* background: rgba(23, 7, 39, 0.4), linear-gradient(180deg, rgba(96, 148, 234, 0.4) 0%, rgba(240, 47, 194, 0.7) 100%); */
+
+    /* background-color: rgba(255, 60, 172, 1); */
+    /* background-image: linear-gradient(180deg, rgba(255, 60, 172, .7) 0%, rgba(120, 75, 160, .7) 50%, rgba(43, 134, 197, .9) 100%); */
+
+    background-image: linear-gradient(180deg, rgba(249, 83, 198, 0.3) 0%, rgba(185, 29, 115, 1) 100%);
+}
+
+.gallery .thumb:nth-child(1) {
+    background: url(assets/img/ls/ls-landing.png) 0 0 no-repeat fixed;
+}
+.gallery .thumb:nth-child(2) {
+    background: url(assets/img/pos/pos-1.jpg) center center no-repeat fixed;
+}
+.gallery .thumb:nth-child(3) {
+    background: url(assets/img/bio/bio-login.png) center center no-repeat fixed;
+}
+.gallery .thumb:nth-child(4) {
+    background: url(assets/img/btg/btg-mockup-pic.png) center 0 no-repeat fixed;
+}
+.gallery .thumb:nth-child(5) {
+    background: url(assets/img/santa/encolador-proto.png) 0 0 no-repeat fixed;
+}
+.gallery .thumb:nth-child(6) {
+    background: url(assets/img/delta/delta.jpg) left top no-repeat fixed;
+}
+
+.gallery .thumb:nth-child(1),
+.gallery .thumb:nth-child(2),
+.gallery .thumb:nth-child(3),
+.gallery .thumb:nth-child(4),
+.gallery .thumb:nth-child(5),
+.gallery .thumb:nth-child(6) {
+    background-size: cover;
+}
+
+.gallery .thumb a:hover {
+    background-color: rgba(238, 130, 238, 0.8);
+    color: white;
+    /* top: -2px; */
+    transition: all 0.6s ease;
+}
+
+@media only screen and (min-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.social {
+    font-size: 2rem;
+}
+
+.social a {
+    padding: 0 20px;
+}
+
+.social a:hover {
+    opacity: .5;
+}
+
+body.btg {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #08AEEA;
+    background-image: linear-gradient(330deg, #08AEEA 0%, #2AF598 100%);
+    background-position: top;
+    background-repeat: no-repeat;
+
+    color: white;
+}
