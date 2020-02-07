@@ -171,32 +171,35 @@ main .lead p {
     background-image: linear-gradient(180deg, rgba(249, 83, 198, 0.3) 0%, rgba(185, 29, 115, 1) 100%);
 }
 
-.gallery .thumb:nth-child(1) {
-    background: url(assets/img/lg/lg-1.png) 0 0 no-repeat fixed;
-}
-.gallery .thumb:nth-child(2) {
-    background: url(assets/img/pos/pos-1.jpg) center center no-repeat fixed;
-}
-.gallery .thumb:nth-child(3) {
-    background: url(assets/img/bio/clinicalBIO-3.png) center center no-repeat fixed;
-}
-.gallery .thumb:nth-child(4) {
-    background: url(assets/img/btg/btg-mockup-pic.png) center 0 no-repeat fixed;
-}
-.gallery .thumb:nth-child(5) {
-    background: url(assets/img/santa/encolador-proto.png) 0 0 no-repeat fixed;
-}
-.gallery .thumb:nth-child(6) {
-    background: url(assets/img/delta/delta.jpg) left top no-repeat fixed;
-}
-
 .gallery .thumb:nth-child(1),
 .gallery .thumb:nth-child(2),
 .gallery .thumb:nth-child(3),
 .gallery .thumb:nth-child(4),
 .gallery .thumb:nth-child(5),
 .gallery .thumb:nth-child(6) {
+    background-size: contain;
+}
+
+.gallery .thumb:nth-child(1) {
+    background: url(assets/img/lg/lg-article.png) bottom center no-repeat fixed;
     background-size: cover;
+}
+.gallery .thumb:nth-child(2) {
+    background: url(assets/img/pos/pos-mock-1.jpg) 0 center no-repeat fixed;
+}
+.gallery .thumb:nth-child(3) {
+    background: url(assets/img/bio/clinicalBIO-3.png) center center no-repeat fixed;
+}
+.gallery .thumb:nth-child(4) {
+    background: url(assets/img/btg/btg-mockup-pic.png) center center no-repeat fixed;
+    background-size: cover;
+}
+.gallery .thumb:nth-child(5) {
+    background: url(assets/img/santander/encolador-proto.png) center right no-repeat fixed;
+}
+.gallery .thumb:nth-child(6) {
+    background-size: cover;
+    background: url(assets/img/delta/delta.jpg) top right no-repeat fixed;
 }
 
 .gallery .thumb a:hover {
