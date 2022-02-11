@@ -11,7 +11,7 @@ $(document).ready(function() {
 //     return false;
 // });
 
-var words = ['Making digital things easier so you can live your life.','Smile througt digital.','I work so you can have a delightful digital experiences.', 'bridge'],
+var words = ['Making digital things.','Easier...','Smile!','It´s ok.','Let´s have delightful experiences.','Let´s have a wonderful time.'],
     currentStep = 0,
     textEl = document.querySelector('.change-text'),
     oldWord = '';
