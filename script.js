@@ -11,7 +11,7 @@ $(document).ready(function() {
 //     return false;
 // });
 
-var words = ['Making digital things.','Easier...','Smile!','It´s ok.','Let´s have delightful experiences.','Let´s have a wonderful time.'],
+var words = ['Making digital things.','Easier.','Seamless','Delightful experiences.','Focusing on the important'],
     currentStep = 0,
     textEl = document.querySelector('.change-text'),
     oldWord = '';
