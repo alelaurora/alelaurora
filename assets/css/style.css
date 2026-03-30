@@ -548,23 +548,5 @@ a:hover {
 /*--------------------------------------------------------------
 # COLOUR SCHEME — Light (forced)
 --------------------------------------------------------------*/
-body {
-  background-color: white;
-  color: var(--Neutral-1);
-}
-
-a { color: var(--Accent) !important; }
-a:hover,
-a:active,
-a.active       { color: var(--Accent); }
-a.navbar-brand { color: var(--Neutral-1) !important; }
-a.navbar-brand:hover { color: var(--Accent) !important; }
-
-.social a {
-  color: var(--Neutral-1) !important;
-  background-color: var(--Neutral-2) !important;
-}
-.social a:hover { color: var(--Accent) !important; }
-
 .logos-light { display: flex; }
 .logos-dark  { display: none; }
