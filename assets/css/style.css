@@ -1,34 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
 /*--------------------------------------------------------------
-# GENERAL
+# DESIGN TOKENS
+#
+# Typographic scale: Major Third (×1.25)
+#   — Robert Bringhurst, The Elements of Typographic Style
+#
+# Spacing scale: multiples of 8 px (half-baseline)
+# Baseline unit: 26 px (16 × 1.618 ≈ leading of body text)
+#   — Josef Müller-Brockmann, Grid Systems in Graphic Design
 --------------------------------------------------------------*/
-* {
+:root {
+  /* ── Colour ──────────────────────────────────────────────── */
+  --Accent:     #6aba83;
+  --Neutral-1:  #1a1a1a;
+  --Neutral-2:  #e7e7e7;
+
+  /* ── Typographic scale  (Major Third, ratio 1.25) ────────── */
+  /*    base = 16 px (browser default)                          */
+  --type-xs:    0.64rem;   /*  10 px — labels, legal           */
+  --type-sm:    0.8rem;    /*  13 px — captions, meta          */
+  --type-base:  1rem;      /*  16 px — body copy               */
+  --type-md:    1.25rem;   /*  20 px — lead text, nav items    */
+  --type-lg:    1.563rem;  /*  25 px — subheadings             */
+  --type-xl:    1.953rem;  /*  31 px — section headings        */
+  --type-2xl:   2.441rem;  /*  39 px — display                 */
+
+  /* ── Leading (line-height) ───────────────────────────────── */
+  --leading-tight:   1.2;    /* headings                       */
+  --leading-base:    1.618;  /* golden ratio — body copy       */
+  --leading-loose:   1.8;    /* small text / labels            */
+
+  /* ── Measure — Bringhurst: 45–75 chars, ~65ch ideal ──────── */
+  --measure: 65ch;
+
+  /* ── Spacing scale (multiples of 8 px) ──────────────────── */
+  --space-1:  0.5rem;    /*  8 px  */
+  --space-2:  1rem;      /* 16 px  */
+  --space-3:  1.5rem;    /* 24 px  */
+  --space-4:  2rem;      /* 32 px  */
+  --space-5:  3rem;      /* 48 px  */
+  --space-6:  4rem;      /* 64 px  */
+  --space-7:  6rem;      /* 96 px  */
+  --space-8:  8rem;      /* 128 px */
+}
+
+/*--------------------------------------------------------------
+# RESET & BASE
+--------------------------------------------------------------*/
+*, *::before, *::after {
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
-  --Accent: rgb(106, 186, 131);
-  --Neutral-1: rgb(26, 26, 26);
-  --Neutral-2: rgb(231, 231, 231);
-  --Primary: ;
+  /* Optical size correction — slightly looser at small sizes */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: 'Inter', sans-serif;
+  font-size: var(--type-base);
+  font-weight: 300;
+  line-height: var(--leading-base);
   color: var(--Neutral-1);
+  background-color: white;
+  /* Prevent layout shift from scrollbar */
+  overflow-x: hidden;
+}
+
+/*--------------------------------------------------------------
+# TYPOGRAPHIC HIERARCHY
+# Weight contrast follows Bringhurst: use only two weights
+# where possible — light (300) for body, bold (700) for heads.
+--------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  /* Tighten letter-spacing slightly at large sizes */
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+h1 { font-size: var(--type-2xl); }
+h2 { font-size: var(--type-xl);  }
+h3 { font-size: var(--type-lg);  }
+h4 { font-size: var(--type-md);  font-weight: 400; letter-spacing: 0; }
+h5 { font-size: var(--type-base);}
+h6 { font-size: var(--type-sm);  }
+
+p {
+  margin-top: 0;
+  /* Bringhurst: orphan/widow control */
+  orphans: 3;
+  widows: 3;
 }
 
 a {
   color: var(--Accent);
   text-decoration: none;
 }
-
 a:hover {
   color: var(--Accent);
 }
 
-h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
+/* Constrain running text to optimal measure */
+.text-measure {
+  max-width: var(--measure);
 }
 
 .visually-hidden {
@@ -41,35 +120,60 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: 1px;
 }
 
-.heading {
-  font-weight: 700;
-}
-
+/*--------------------------------------------------------------
+# SECTIONS
+# Vertical rhythm: multiples of the 8 px unit.
+# Müller-Brockmann: whitespace is not empty — it is structure.
+--------------------------------------------------------------*/
 .section {
-  padding: 1rem 0;
+  padding: var(--space-6) 0;
 }
 
 .site-portfolio > .container {
   border-top: 1px solid var(--Neutral-1);
-  padding-top: 2rem;
-} 
+  padding-top: var(--space-5);
+}
 
+/*--------------------------------------------------------------
+# INTRO PARAGRAPH
+# Measure control (Bringhurst §2.4): optimal line ≈ 65 chars.
+# Font weight 300 at --type-base creates quiet authority.
+--------------------------------------------------------------*/
+.intro-text {
+  max-width: var(--measure);
+  font-size: var(--type-base);
+  font-weight: 300;
+  line-height: var(--leading-base);
+}
+
+/*--------------------------------------------------------------
+# FILTER BUTTONS
+# Uppercase with 0.1em tracking — Bringhurst: small-caps/
+# uppercase settings require added inter-letter space to
+# compensate for optical crowding.
+--------------------------------------------------------------*/
 .filters a {
   text-decoration: none;
   color: var(--Neutral-1);
   display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 var(--space-2);
   position: relative;
+  font-size: var(--type-sm);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: var(--leading-loose);
 }
-.filters a:hover, .filters a:focus, .filters a:active {
+.filters a:hover,
+.filters a:focus,
+.filters a:active {
   text-decoration: none;
 }
-.filters a:hover:before {
+.filters a:hover::before {
   content: "";
   position: absolute;
-  left: 10px;
-  right: 10px;
+  left:   var(--space-2);
+  right:  var(--space-2);
   bottom: 0;
   height: 1px;
   background-color: var(--Accent);
@@ -77,150 +181,156 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .filters a.active {
   color: var(--Accent);
 }
-.filters a.active:before {
+.filters a.active::before {
   content: "";
   position: absolute;
-  left: 10px;
-  right: 10px;
+  left:   var(--space-2);
+  right:  var(--space-2);
   bottom: 0;
   height: 1px;
   background-color: var(--Accent);
 }
 
+/*--------------------------------------------------------------
+# PORTFOLIO ITEMS
+# Grid gutter = --space-3 (24 px) — one full baseline unit.
+--------------------------------------------------------------*/
 .item {
   border: none;
-  margin-bottom: 30px;
+  margin-bottom: var(--space-3);
 }
 .item .item-wrap {
   display: block;
   position: relative;
   overflow: hidden;
 }
-.item .item-wrap:after {
+.item .item-wrap::after {
   z-index: 2;
   position: absolute;
   content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0, 0.4);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s all ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 .item .item-wrap img {
-  transition: 0.3s transform ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
   transform: scale(1);
 }
+.item .item-wrap:hover img {
+  transform: scale(1.04);
+}
+.item .item-wrap:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 .item .item-wrap > .work-info {
   position: absolute;
   top: 50%;
   width: 100%;
   text-align: center;
   z-index: 3;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% + var(--space-3)));
   color: white;
   opacity: 0;
   visibility: hidden;
-  margin-top: 20px;
-  transition: 0.3s all ease;
-}
-.item .item-wrap > .work-info h3 {
-  font-size: 20px;
-  margin-bottom: 0;
-}
-.item .item-wrap > .work-info span {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-}
-.item .item-wrap:hover {
-  text-decoration: none;
-}
-.item .item-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  overflow: hidden;
-}
-.item .item-wrap:hover img {
-  transform: scale(1.05);
-}
-.item .item-wrap:hover:after {
-  opacity: 1;
-  visibility: visible;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 .item .item-wrap:hover .work-info {
-  margin-top: 0px;
+  transform: translateY(-50%);
   opacity: 1;
   visibility: visible;
+}
+
+/* Work info typography */
+.item .item-wrap > .work-info h3 {
+  font-size: var(--type-md);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-1);
+}
+.item .item-wrap > .work-info span {
+  font-size: var(--type-xs);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em; /* wider tracking on smaller uppercase */
+}
+
+/*--------------------------------------------------------------
+# HEADINGS & TEXT UTILITIES
+--------------------------------------------------------------*/
+.heading {
+  font-size: var(--type-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: var(--leading-tight);
 }
 
 .h3 {
-  font-size: 1.4rem;
+  font-size: var(--type-lg);
+  font-weight: 700;
+  line-height: var(--leading-tight);
 }
 
-/* .h4 {
-  font-size: 16px;
-} */
-
-.heading {
-  font-size: 28px;
-}
-
+/*--------------------------------------------------------------
+# CTA / READ MORE
+--------------------------------------------------------------*/
 .readmore {
   display: inline-block;
-  border: 1px solid #000;
-  padding: 10px 15px;
-  font-size: 12px;
+  border: 1px solid var(--Neutral-1);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--type-xs);
+  font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--Neutral-1);
-  transition: 0.2s all ease;
-  font-weight: 700;
-}
-.readmore:active, .readmore:focus, .readmore:hover {
-  outline: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 .readmore:hover {
-  color: var(--Neutral-2);
+  color: white;
+  background-color: var(--Neutral-1);
   text-decoration: none;
-  background: var(--Neutral-1);
 }
 
+/*--------------------------------------------------------------
+# MISC COMPONENTS
+--------------------------------------------------------------*/
 .testimonials-slider .swiper-pagination {
-  margin-top: -60px;
+  margin-top: calc(-1 * var(--space-6));
   position: relative;
 }
 .testimonials-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(var(--Neutral-1), 0.3);
+  width: 10px;
+  height: 10px;
+  background-color: rgba(26, 26, 26, 0.3);
   opacity: 1;
 }
 .testimonials-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: rgba(var(--Neutral-1), 0.6);
+  background-color: rgba(26, 26, 26, 0.6);
 }
 
 .sticky-content {
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
-  /* required */
 }
 
 .list-line li {
-  margin-bottom: 10px;
+  margin-bottom: var(--space-2);
   position: relative;
-  padding-left: 30px;
+  padding-left: var(--space-5);
 }
-.list-line li:before {
+.list-line li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.7rem;
-  width: 10px;
-  height: 2px;
+  top: 0.75em; /* aligns with cap-height baseline */
+  width: var(--space-2);
+  height: 1px;
   background: var(--Neutral-1);
 }
 
@@ -228,10 +338,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 0;
   background: var(--Neutral-2);
   border: 1px solid transparent;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding-top: var(--space-2) !important;
+  padding-bottom: var(--space-2) !important;
+  font-size: var(--type-base);
 }
-.form-control:active, .form-control:focus {
+.form-control:active,
+.form-control:focus {
   background: var(--Neutral-2);
   outline: none;
   box-shadow: none;
@@ -239,7 +351,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .custom-progress {
-  height: 7px;
+  height: 2px;
   border-radius: 0;
 }
 .custom-progress .progress-bar {
@@ -247,212 +359,163 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .card-shadow {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .back-to-top {
-  font-size: 36px;
-  transition: all 0.3s ease-in-out;
+  font-size: var(--type-xl);
+  transition: opacity 0.3s ease-in-out;
 }
 
-/* Services */
 .services i {
-  font-size: 40px;
+  font-size: var(--type-2xl);
 }
 .services h4 {
-  padding-top: 10px;
-}
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  padding-top: var(--space-2);
 }
 
 @keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0%   { transform: rotate(0deg);   }
+  100% { transform: rotate(360deg); }
 }
+
 /*--------------------------------------------------------------
-# Header
+# HEADER & NAVIGATION
+# Navbar top padding = --space-6 (64 px) — generous air
+# communicates confidence, follows Müller-Brockmann's principle
+# that margin establishes the tone of the page.
 --------------------------------------------------------------*/
-/* Custom Navmenu */
 .custom-navmenu {
   background: var(--Neutral-1);
 }
-.custom-navmenu .custom-menu, .custom-navmenu .custom-menu li {
+.custom-navmenu .custom-menu,
+.custom-navmenu .custom-menu li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 .custom-navmenu .custom-menu li {
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: var(--type-md);
+  font-weight: 300;
 }
 .custom-navmenu .custom-menu li a {
   color: var(--Neutral-2);
-  padding: 10px 0 !important;
+  padding: var(--space-1) 0 !important;
 }
 .custom-navmenu .custom-menu li a:hover {
-  /* text-decoration: none; */
   text-decoration: underline;
+  text-underline-offset: 0.2em;
   color: var(--Accent);
 }
 .custom-navmenu .custom-menu li.active a {
   text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 .custom-navmenu h3 {
-  font-size: 20px;
+  font-size: var(--type-md);
   color: var(--Neutral-2);
 }
-.custom-navmenu p {
-  color: rgba(var(--Neutral-2), 0.6);
-}
 .custom-navmenu a {
-  color: rgba(var(--Neutral-2), 0.7);
+  color: var(--Neutral-2);
 }
 .custom-navmenu a:hover {
   color: var(--Accent);
 }
 
-#clients {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-#clients .clients-wrap {
-  border-top: 1px solid var(--mediumgreen);
-  border-left: 1px solid var(--mediumgreen);
-  border-top: 1px solid transparent;
-  border-left: 1px solid transparent;
-}
-
-#clients .client-logo {
-  padding: 2rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-right: 1px solid var(--mediumgreen);
-  border-bottom: 1px solid var(--mediumgreen);
-  border-right: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  overflow: hidden;
-  background: transparent;
-  height: 160px;    
-}
-
-#clients img {
-  transition: all 0.4s ease-in-out;
-  opacity: 0.8;
-}
-
-/* Custom Navbar */
 .custom-navbar {
-  padding-top: 50px;
+  padding-top: var(--space-6); /* 64 px — Müller-Brockmann top margin */
   width: 100%;
 }
 
+/* Brand name: one step above body on the scale */
 .custom-navbar .navbar-brand {
-  font-size: 1.7rem;
+  font-size: var(--type-md);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
 }
-
-.custom-navbar .navbar-brand {
-  transition: all 0.25s ease-in-out;
-}
-
 .custom-navbar .navbar-brand i {
-  font-size: 1.5rem;
-  margin-right: .5rem;
+  font-size: var(--type-base);
+  margin-right: var(--space-1);
+  vertical-align: middle;
 }
 
-/* Burger */
+/*--------------------------------------------------------------
+# CLIENTS SECTION
+--------------------------------------------------------------*/
+#clients {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-7);
+}
+
+#clients .client-logo {
+  padding: var(--space-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+  /* Height = 4 × --space-5 = 192 px, proportional to --space-6 */
+  height: 128px;
+}
+
+#clients img {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0.7;
+}
+#clients img:hover {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# BURGER MENU
+--------------------------------------------------------------*/
 .burger {
   width: 28px;
   height: 32px;
   cursor: pointer;
   position: relative;
 }
-
-.burger:before, .burger span, .burger:after {
+.burger::before,
+.burger span,
+.burger::after {
   width: 100%;
-  height: 2px;
+  height: 1px; /* thinner line — more refined at this scale */
   display: block;
   background: var(--Neutral-1);
-  border-radius: 2px;
   position: absolute;
   opacity: 1;
 }
-
-.burger:before, .burger:after {
-  transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
-  -webkit-transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+.burger::before,
+.burger::after {
+  transition:
+    top 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
   content: "";
 }
+.burger::before { top: 6px;  }
+.burger span    { top: 15px; }
+.burger::after  { top: 24px; }
 
-.burger:before {
-  top: 4px;
-}
+.burger:hover::before { top: 9px;  }
+.burger:hover::after  { top: 21px; }
 
-.burger span {
-  top: 15px;
-}
-
-.burger:after {
-  top: 26px;
-}
-
-/* Hover */
-.burger:hover:before {
-  top: 7px;
-}
-
-.burger:hover:after {
-  top: 23px;
-}
-
-/* Click */
-.burger.active span {
-  opacity: 0;
-}
-
-.burger.active:before, .burger.active:after {
-  top: 40%;
-}
-
-.burger.active:before {
-  transform: rotate(45deg);
-}
-
-.burger.active:after {
-  transform: rotate(-45deg);
-}
-
-.burger:focus {
-  outline: none;
-}
+.burger.active span       { opacity: 0; }
+.burger.active::before,
+.burger.active::after     { top: 40%; }
+.burger.active::before    { transform: rotate(45deg);  }
+.burger.active::after     { transform: rotate(-45deg); }
+.burger:focus             { outline: none; }
 
 /*--------------------------------------------------------------
-# Footer
+# FOOTER
 --------------------------------------------------------------*/
 .footer {
-  padding: 0 0 4rem 0;
+  padding: 0 0 var(--space-7) 0;
 }
 .footer a {
   color: var(--Neutral-1);
@@ -460,18 +523,19 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .social a {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: var(--space-6);
+  height: var(--space-6);
   border-radius: 50%;
   background: var(--Neutral-2);
   position: relative;
   text-align: center;
   color: var(--Neutral-1);
+  transition: color 0.2s ease;
 }
 .social a span {
   display: inline-block;
-  left: 50%;
   position: absolute;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -480,72 +544,71 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 /*--------------------------------------------------------------
-# PREFERED SCHEME
+# COLOUR SCHEME
 --------------------------------------------------------------*/
 @media (prefers-color-scheme: light) {
   body {
-      background-color:   white;
-      color:              var(--Neutral-1);
+    background-color: white;
+    color: var(--Neutral-1);
   }
-  
-  a { color:              var(--Accent) !important; }
-  
+  a { color: var(--Accent) !important; }
   a:hover,
   a:active,
-  a.active { color:       var(--Accent); }
-  
-  a.navbar-brand {color:   var(--Neutral-1) !important; }
-  a.navbar-brand:hover {color:   var(--Accent) !important; }
+  a.active       { color: var(--Accent); }
+  a.navbar-brand { color: var(--Neutral-1) !important; }
+  a.navbar-brand:hover { color: var(--Accent) !important; }
 
   .social a {
-    color:      var(--Neutral-1) !important;
+    color: var(--Neutral-1) !important;
     background-color: var(--Neutral-2) !important;
   }
+  .social a:hover { color: var(--Accent) !important; }
 
-  .social a:hover { color:      var(--Accent) !important;}
-
-  .logos-light  { display: flex; }
-  .logos-dark   { display: none; }
+  .logos-light { display: flex; }
+  .logos-dark  { display: none; }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-      background-color:   var(--Neutral-1);
-      color:              var(--Neutral-2);
+    background-color: var(--Neutral-1);
+    color: var(--Neutral-2);
   }
-
   .custom-navmenu {
-    background-color:     black;
+    background-color: black;
   }
-
   .custom-navmenu .custom-menu li a {
-    color:                var(--Neutral-2);
+    color: var(--Neutral-2);
   }
-
   .custom-navbar .navbar-brand {
-    color:                var(--Neutral-2);
+    color: var(--Neutral-2);
   }
-
-  .burger:before, 
-  .burger span, 
-  .burger:after {
-    background:           var(--Neutral-2);
+  .burger::before,
+  .burger span,
+  .burger::after {
+    background: var(--Neutral-2);
   }
-
-  .navbar-light .navbar-brand:focus, 
+  .navbar-light .navbar-brand:focus,
   .navbar-light .navbar-brand:hover {
-    color:                var(--Accent);
+    color: var(--Accent);
   }
-
   .filters a {
-    color:                var(--Neutral-2);
+    color: var(--Neutral-2);
   }
+  .logos-light { display: none; }
+  .logos-dark  { display: flex; }
 
-  .logos-light  { display: none; }
-  .logos-dark   { display: flex; }
-
-  .list-line li::before, 
-  .readmore {
+  .list-line li::before {
     background-color: var(--Neutral-2);
+  }
+  .readmore {
+    border-color: var(--Neutral-2);
+    color: var(--Neutral-2);
+  }
+  .readmore:hover {
+    background-color: var(--Neutral-2);
+    color: var(--Neutral-1);
+  }
+  .site-portfolio > .container {
+    border-top-color: var(--Neutral-2);
   }
 }
