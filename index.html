@@ -5,16 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Alejandro&#x2007;Laurora&#x2007;-&#x2007;Product&#x2007;Designer</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Alejandro Laurora — Product Designer</title>
+  <meta name="description" content="Portfolio of Alejandro Laurora, Product Designer with 8+ years of experience creating enjoyable and seamless digital experiences.">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -22,260 +18,292 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <!-- ======= Navbar ======= -->
-  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
-    <div class="container py-2 py-md-5">
-      <div class="row align-items-end flex-column">
-        <div class="col-md-2">
-          <ul class="custom-menu text-end">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-          </ul>
+  <!-- Skip navigation — WCAG 2.4.1 -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ======= Site Header ======= -->
+  <header role="banner">
+
+    <!-- Mobile / expanded nav menu -->
+    <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+      <div class="container py-2 py-md-5">
+        <div class="row align-items-end flex-column">
+          <div class="col-md-2">
+            <ul class="custom-menu text-end" role="list">
+              <li><a href="index.html" aria-current="page">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <nav class="navbar navbar-light custom-navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand d-flex flex-row align-items-center" aria-label="Go back Home"><i class="bi bi-triangle"></i> Alejandro Laurora</a>
-      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-label="Open or close Menu">
-        <span></span>
-      </a>
-    </div>
-  </nav>
+    <nav class="navbar navbar-light custom-navbar" aria-label="Primary navigation">
+      <div class="container">
+        <a href="index.html" class="navbar-brand d-flex flex-row align-items-center" aria-label="Alejandro Laurora — go to homepage">
+          <i class="bi bi-triangle" aria-hidden="true"></i> Alejandro Laurora
+        </a>
+        <button
+          class="burger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-navbar"
+          aria-controls="main-navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+
+  </header>
 
   <main id="main">
 
-    <!-- ======= Works Section ======= -->
-    <section class="section site-portfolio">
+    <!-- ======= Portfolio Section ======= -->
+    <section class="section site-portfolio" aria-labelledby="portfolio-heading">
       <div class="container">
+
+        <!-- Visually hidden h1 provides page landmark for screen readers -->
+        <h1 id="portfolio-heading" class="visually-hidden">Portfolio</h1>
+
         <div class="row mb-5 align-items-center">
           <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
-            <!-- <h2>Hey, I'm Johan Stanworth</h2> -->
-            <!-- <p class="mb-0">Freelance Creative &amp; Professional Graphics Designer</p> -->
             <p class="mb-0 intro-text">I'm a Product Designer that loves to connect with people through design. I prefer to see things not as they are but as they could be, share my ideas and vision, and take the necessary actions to create enjoyable and seamless experiences.</p>
           </div>
           <div class="col-md-12 col-lg-6 text-start text-lg-end" data-aos="fade-up" data-aos-delay="100">
-            <div id="filters" class="filters">
-              <a href="#" data-filter="*" class="active">All</a>
-              <a href="#" data-filter=".web">Web</a>
-              <a href="#" data-filter=".design">Design</a>
+            <div
+              id="filters"
+              class="filters"
+              role="group"
+              aria-label="Filter portfolio by category">
+              <a href="#" data-filter="*" class="active" aria-pressed="true">All</a>
+              <a href="#" data-filter=".web" aria-pressed="false">Web</a>
+              <a href="#" data-filter=".design" aria-pressed="false">Design</a>
             </div>
           </div>
         </div>
+
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-          
+
           <div class="item design web col-sm-6 col-md-3 col-lg-3 mb-3">
-            <a href="keep-climbing.html" class="item-wrap fancybox">
-              <div class="work-info">
+            <a href="keep-climbing.html" class="item-wrap" aria-label="Keep Climbing — Delta project">
+              <div class="work-info" aria-hidden="true">
                 <h3>Keep Climbing</h3>
                 <span>Delta</span>
               </div>
-              <img class="img-fluid" title="Keep Climbing" src="assets/img/Img-1-alt.png">
+              <img class="img-fluid" src="assets/img/Img-1-alt.png" alt="Keep Climbing — Delta Airlines project cover">
             </a>
           </div>
 
           <div class="item design col-sm-6 col-md-3 col-lg-3 mb-3">
-            <a href="patient-online-services.html" class="item-wrap fancybox">
-              <div class="work-info">
+            <a href="patient-online-services.html" class="item-wrap" aria-label="Patient Online Services — Mayo Clinic project">
+              <div class="work-info" aria-hidden="true">
                 <h3>Patient Online Services</h3>
                 <span>Mayo Clinic</span>
               </div>
-              <img src="assets/img/Img-2.png" class="img-fluid" alt="Patient Online Services - Notebook Mockup">
+              <img src="assets/img/Img-2.png" class="img-fluid" alt="Patient Online Services — Mayo Clinic laptop mockup">
             </a>
           </div>
 
           <div class="item design col-sm-6 col-md-3 col-lg-3 mb-3">
-            <a href="litoral-gas.html" class="item-wrap fancybox">
-              <div class="work-info">
+            <a href="litoral-gas.html" class="item-wrap" aria-label="Site Redesign — Litoral Gas project">
+              <div class="work-info" aria-hidden="true">
                 <h3>Site Redesign</h3>
                 <span>Litoral Gas</span>
               </div>
-              <img src="assets/img/Img-3.png" class="img-fluid" alt="Litoral Gas - Mobile Site">  
+              <img src="assets/img/Img-3.png" class="img-fluid" alt="Litoral Gas — mobile site redesign">
             </a>
           </div>
-          
+
           <div class="item design web col-sm-6 col-md-3 col-lg-3 mb-3">
-            <a href="bioma.html" class="item-wrap fancybox">
-              <div class="work-info">
+            <a href="bioma.html" class="item-wrap" aria-label="BIOMA Design System — La Segunda project">
+              <div class="work-info" aria-hidden="true">
                 <h3>B I O M A</h3>
                 <span>La Segunda</span>
               </div>
-              <img class="img-fluid" title="Bioma - Design System" src="assets/img/Img-4.png">
+              <img class="img-fluid" src="assets/img/Img-4.png" alt="BIOMA Design System — La Segunda insurance">
             </a>
           </div>
+
         </div>
       </div>
-    </section><!-- End  Works Section -->
+    </section>
 
     <!-- ======= Clients Section ======= -->
-    <section class="section">
+    <section class="section" aria-labelledby="clients-heading">
       <div class="container" id="clients">
         <div class="row justify-content-center text-center mb-4">
           <div class="col-5">
-            <h4>Brands I've worked with</h4>
+            <h2 id="clients-heading" class="h4">Brands I've worked with</h2>
           </div>
         </div>
-        
-        <div class="row no-gutters clients-wrap clearfix wow fadeInUp logos-light" style="visibility: visible; animation-name: fadeInUp;">
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-accru.svg" class="img-fluid" alt="ACCRU: Academic & Community Cancer Research United logo">
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-btg.svg" class="img-fluid" alt="BTG Pactual logo">
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-consumersenery.svg" class="img-fluid" alt="Consumers Energy logo">
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-delta.svg" class="img-fluid" alt="Delta Airlines logo">
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-lasegunda.svg" class="img-fluid" alt="La Segunda logo">
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-litoralgas.svg" class="img-fluid" alt="Literal Gas logo">
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-mayo.svg" class="img-fluid" alt="Mayo Clinic logo">
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-mls.svg" class="img-fluid" alt="The MLS logo">
-              </div>
-          </div>
 
+        <div class="row no-gutters clients-wrap logos-light" aria-label="Client logos">
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-accru.svg" class="img-fluid" alt="ACCRU — Academic & Community Cancer Research United">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-btg.svg" class="img-fluid" alt="BTG Pactual">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-consumersenery.svg" class="img-fluid" alt="Consumers Energy">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-delta.svg" class="img-fluid" alt="Delta Air Lines">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-lasegunda.svg" class="img-fluid" alt="La Segunda Seguros">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-litoralgas.svg" class="img-fluid" alt="Litoral Gas">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-mayo.svg" class="img-fluid" alt="Mayo Clinic">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-mls.svg" class="img-fluid" alt="Major League Soccer (MLS)">
+            </div>
+          </div>
           <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-santander.svg" class="img-fluid" alt="Santander Bank logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-santander.svg" class="img-fluid" alt="Santander Bank">
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-statefarm.svg" class="img-fluid" alt="Statefarm logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-statefarm.svg" class="img-fluid" alt="State Farm">
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/logo-vestaplus.svg" class="img-fluid" alt="Vestaplus logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/logo-vestaplus.svg" class="img-fluid" alt="Vestaplus">
+            </div>
           </div>
         </div>
 
-        <div class="row no-gutters clients-wrap clearfix wow fadeInUp logos-dark" style="visibility: visible; animation-name: fadeInUp;">
+        <!-- Dark-mode logos (hidden in light theme) -->
+        <div class="row no-gutters clients-wrap logos-dark" aria-hidden="true">
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-accru.svg" class="img-fluid" alt="ACCRU: Academic & Community Cancer Research United logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-accru.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-btg.svg" class="img-fluid" alt="BTG Pactual logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-btg.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-consumersenery.svg" class="img-fluid" alt="Consumers Energy logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-consumersenery.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-delta.svg" class="img-fluid" alt="Delta Airlines logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-delta.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-lasegunda.svg" class="img-fluid" alt="La Segunda logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-lasegunda.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-litoralgas.svg" class="img-fluid" alt="Literal Gas logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-litoralgas.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-mayo.svg" class="img-fluid" alt="Mayo Clinic logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-mayo.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-mls.svg" class="img-fluid" alt="The MLS logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-mls.svg" class="img-fluid" alt="">
+            </div>
           </div>
-
           <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-santander.svg" class="img-fluid" alt="Santander Bank logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-santander.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-statefarm.svg" class="img-fluid" alt="Statefarm logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-statefarm.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-6">
-              <div class="client-logo">
-                <img src="assets/img/company-logos/dark/logo-vestaplus.svg" class="img-fluid" alt="Vestaplus logo">
-              </div>
+            <div class="client-logo">
+              <img src="assets/img/company-logos/dark/logo-vestaplus.svg" class="img-fluid" alt="">
+            </div>
           </div>
         </div>
-        
+
       </div>
-    </section><!-- End Clients Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <hr>
       <div class="row align-items-center">
         <div class="col-sm-6">
-          <p class="mb-1"><i class="fa fa-copyright"></i> 2022 <i class="bi bi-triangle-fill"></i> Alejandro Laurora - Product Designer</p>
+          <p class="mb-1">
+            <small>&#169; <time datetime="2026">2026</time> Alejandro Laurora — Product Designer</small>
+          </p>
         </div>
         <div class="col-sm-6 social text-md-end">
-          <a href="mailto:alelaurora@gmail.com" aria-label="Open an email with my address in the 'to:' field"><span class="bi bi-envelope"></span></a>
-          <a href="https://www.instagram.com/alelaurora/" target="_blank" rel="noopener noreferrer" aria-label="Open my Instagram page on a new tab"><span class="bi bi-instagram"></span></a>
-          <a href="https://www.linkedin.com/in/alelaurora" target="_blank" rel="noopener noreferrer" aria-label="Open my LinkedIn page on a new tab"><span class="bi bi-linkedin"></span></a>
+          <a href="mailto:alelaurora@gmail.com" aria-label="Send email to Alejandro Laurora">
+            <span class="bi bi-envelope" aria-hidden="true"></span>
+          </a>
+          <a href="https://www.instagram.com/alelaurora/" target="_blank" rel="noopener noreferrer" aria-label="Alejandro Laurora on Instagram (opens in new tab)">
+            <span class="bi bi-instagram" aria-hidden="true"></span>
+          </a>
+          <a href="https://www.linkedin.com/in/alelaurora" target="_blank" rel="noopener noreferrer" aria-label="Alejandro Laurora on LinkedIn (opens in new tab)">
+            <span class="bi bi-linkedin" aria-hidden="true"></span>
+          </a>
         </div>
       </div>
     </div>
   </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Go back to top"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#main" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+  </a>
 
-
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Main JS -->
   <script src="assets/js/main.js"></script>
 
 </body>

@@ -5,256 +5,230 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Alejandro Laurora - B I O M A</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>BIOMA Design System — Alejandro Laurora</title>
+  <meta name="description" content="BIOMA is La Segunda's design system for digital products. Created to unify interfaces, consolidate experiences, and scale across 20+ platforms.">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.google.com/share?selection.family=Playfair%20Display:ital,wght@0,400;0,600;0,700;1,600%7CWork%20Sans:wght@300;400;700" rel="stylesheet"> -->
-
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <!-- ======= Navbar ======= -->
-  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
-    <div class="container py-2 py-md-5">
-      <div class="row align-items-end flex-column">
-        <div class="col-md-2">
-          <ul class="custom-menu text-end">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <!-- <li><a href="works.html">Works</a></li> -->
-            <!-- <li><a href="contact.html">Contact</a></li> -->
-          </ul>
+  <!-- Skip navigation — WCAG 2.4.1 -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+
+    <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+      <div class="container py-2 py-md-5">
+        <div class="row align-items-end flex-column">
+          <div class="col-md-2">
+            <ul class="custom-menu text-end" role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <nav class="navbar navbar-light custom-navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand" aria-label="Go back Home"><i class="bi bi-triangle"></i></a>
-      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-label="Open or close Menu">
-        <span></span>.
-      </a>
-    </div>
-  </nav>
+    <nav class="navbar navbar-light custom-navbar" aria-label="Primary navigation">
+      <div class="container">
+        <a href="index.html" class="navbar-brand" aria-label="Alejandro Laurora — go to homepage">
+          <i class="bi bi-triangle" aria-hidden="true"></i>
+        </a>
+        <button
+          class="burger"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-navbar"
+          aria-controls="main-navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </nav>
+
+  </header>
 
   <main id="main">
 
-    <section class="section">
+    <section class="section" aria-labelledby="case-heading">
       <div class="container">
         <div class="row mb-4 align-items-center">
           <div class="col-md-6" data-aos="fade-up">
-            <h2>Design Ecosystem</h2>
+            <h1 id="case-heading">Design Ecosystem</h1>
             <p>La Segunda is the 4th insurance company in Argentina. B I O M A is La Segunda's design system for digital products.</p>
             <p>Inspired with their cooperative and sustainability brand values, I name it Bioma (spanish for biome). It suggests a flexible, growing, and ever-changing system collaboration, in which, the design system will grow with different platforms, and they will grow with it.</p>
           </div>
         </div>
       </div>
-      
+
       <div class="site-section pb-0">
         <div class="container">
           <div class="row align-items-stretch">
 
-            <!-- MAIN -->
+            <!-- MAIN content -->
             <div class="col-md-8" data-aos="fade-up">
-
-              <!-- <h3 class="mt-4">Introduction</h3> -->
-              <!-- <p>The creation of the B I O M A it's a story about change and uncertainty.</p>
-              <p>When I entered the company on 2019, La Segunda was going through a very rapid expansion of software development. The company was changing his core to world-class technologies (Guidewire and SAP) with Angular & React Frameworks on Front-end and implementing Openshift to orquestate everything as well.
-              Because of this, different teams and providers were working on different projects at the same time. Every platform was starting to look different, and not only that, how the users felt the company and brand. Ofently, the same problems were solved different, even inside the same app.</p>
-              <p>We needed to unify, consolidate, and scale quickly. But also unify the company's voice to the users, and with the same importance, the experiences must be felt the same way. A Design System was needed to bring order to that uncertainty.</p> -->
-
-
-              <!-- <div class="row pt-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                  <img src="assets/img/bioma/color@2x.png" class="img-fluid pb-2" alt="La Segunda Bioma - Color palettes page">
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                  <img src="assets/img/bioma/type@2x.png" class="img-fluid pb-2" alt="PLa Segunda Bioma - Typography page">
-                </div>
-              </div> -->
-
-              
-              <!-- <h3 class="my-4">Project early stages</h3> -->
-              <!-- <p>I started working on the basic elements like the main color palette, typographic scale, and shapes that give birth to components like buttons.</p> -->
-
-              <!-- <div class="row">
-                <div class="col-md-6">
-                  <img src="assets/img/bioma/color-primary@2x.png" class="img-fluid py-5 px-4" alt="La Segunda Bioma - Color palette with primary color, Roux">
-                </div>
-                <div class="col-md-6">
-                  <img src="assets/img/bioma/buttons@2x.png" class="img-fluid py-5 px-3" alt="La Segunda Bioma - Buttons set">
-                </div>
-              </div> -->
-
-              <!-- <h3 class="pt-4">But we needed a name for it!</h3> -->
-              <!-- <p>The company always had cooperative and sustaintabiliy brand values and actions. When I started building the B I O M A, the company was building a sustainable building, called "Núcleo" (spanish for nucleus). Now it's the second more sustainable building in Argentina, getting the LEED Platimun certificate.</p> -->
-              <!-- <img src="assets/img/bioma/nucleo-1.jpg" class="img-fluid mt-3 mb-4 card-shadow" alt="La Segunda Bioma - La Segunda 'Nucleo' building image"> -->
-              <!-- <p>Inspired with these brand values, I name it Bioma (spanish for biome) </p> -->
-              <!-- <p>The name Bioma, was heavily inspired by these brands values that wraps everything together. It suggests a flexible, growing, and ever-changing system collaboration, which will grow with different systems (creating new designs for existing platforms) and the systems will grow with it (designing new platforms with B I O M A).</p> -->
-
-              <!-- <h3 class="">First use cases</h3> -->
-              <!-- <p>In the beginning, we applied to different Front-end Angular projects, since it was easier and the development team was closer to us.</p> -->
 
               <div class="row pt-4">
                 <div class="col" data-aos="fade-up" data-aos-delay="200">
-                  <img src="assets/img/bioma/01 - Bioma Mockup@2x.png" class="img-fluid" alt="La Segunda Bioma - Coded Bioma in a computer">
+                  <img src="assets/img/bioma/01 - Bioma Mockup@2x.png" class="img-fluid" alt="BIOMA design system displayed on a desktop computer">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up" data-aos-delay="200">
-                  <img src="assets/img/bioma/02 - Main Color@2x.png" class="img-fluid" alt="La Segunda Bioma - Main color for Bioma">
-                </div>
-              </div>
-              
-              <div class="row">
-                <div class="col" data-aos="fade-up" data-aos-delay="100">
-                  <img src="assets/img/bioma/03 - Type Scale@2x.png" class="img-fluid" alt="La Segunda Bioma - Typographic scale for Bioma">
+                  <img src="assets/img/bioma/02 - Main Color@2x.png" class="img-fluid" alt="BIOMA main colour palette — Roux primary colour">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up" data-aos-delay="100">
-                  <img src="assets/img/bioma/04 - Buttons@2x.png" class="img-fluid" alt="La Segunda Bioma - All Bioma buttons">
+                  <img src="assets/img/bioma/03 - Type Scale@2x.png" class="img-fluid" alt="BIOMA typographic scale">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col" data-aos="fade-up" data-aos-delay="100">
+                  <img src="assets/img/bioma/04 - Buttons@2x.png" class="img-fluid" alt="BIOMA full button set">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up" data-aos-delay="50">
-                  <img src="assets/img/bioma/06 - Input forms@2x.png" class="img-fluid" alt="La Segunda Bioma - Bioma's input forms">
+                  <img src="assets/img/bioma/06 - Input forms@2x.png" class="img-fluid" alt="BIOMA input form components">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up" data-aos-delay="50">
-                  <img src="assets/img/bioma/07 - Square Buttons@2x.png" class="img-fluid" alt="La Segunda Bioma - Bioma's square buttons">
+                  <img src="assets/img/bioma/07 - Square Buttons@2x.png" class="img-fluid" alt="BIOMA square button variants">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up" data-aos-delay="50">
-                  <img src="assets/img/bioma/08 - Components@2x.png" class="img-fluid" alt="La Segunda Bioma - Components showcase">
+                  <img src="assets/img/bioma/08 - Components@2x.png" class="img-fluid" alt="BIOMA component library showcase">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up">
-                  <img src="assets/img/bioma/09 - Dashboard@2x.png" class="img-fluid" alt="La Segunda Bioma - Dashboard example">
+                  <img src="assets/img/bioma/09 - Dashboard@2x.png" class="img-fluid" alt="BIOMA dashboard example">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up">
-                  <img src="assets/img/bioma/10 - Modal@2x.png" class="img-fluid" alt="La Segunda Bioma - Modal">
+                  <img src="assets/img/bioma/10 - Modal@2x.png" class="img-fluid" alt="BIOMA modal component">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up">
-                  <img src="assets/img/bioma/11 - Worker's Insurance@2x.png" class="img-fluid" alt="La Segunda Bioma - Worker's insurance app mockups">
+                  <img src="assets/img/bioma/11 - Worker's Insurance@2x.png" class="img-fluid" alt="BIOMA applied to a worker's insurance app">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up">
-                  <img src="assets/img/bioma/12 - Headers@2x.png" class="img-fluid" alt="La Segunda Bioma - Bioma's headers">
+                  <img src="assets/img/bioma/12 - Headers@2x.png" class="img-fluid" alt="BIOMA header components">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up">
-                  <img src="assets/img/bioma/13 - Benefits@2x.png" class="img-fluid" alt="La Segunda Bioma - Benefits page">
+                  <img src="assets/img/bioma/13 - Benefits@2x.png" class="img-fluid" alt="BIOMA benefits page template">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col" data-aos="fade-up">
-                  <img src="assets/img/bioma/14 - Mobile Stepper@2x.png" class="img-fluid" alt="La Segunda Bioma - Mobile stepper showcase">
+                  <img src="assets/img/bioma/14 - Mobile Stepper@2x.png" class="img-fluid" alt="BIOMA mobile stepper component">
                 </div>
               </div>
 
             </div>
 
             <!-- SIDE -->
-            <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
+            <aside class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100" aria-label="Project details">
               <div class="sticky-content">
-                <h3 class="h3 pt-4"><strong>B I O M A</strong></h3>
+                <h2 class="h3 pt-4">B I O M A</h2>
                 <p class="mb-4"><span class="text-muted text-uppercase">La Segunda</span></p>
 
                 <div class="mb-5">
-                  <!-- <p>The creation of the B I O M A it's a story about change and uncertainty.</p>
-                  <p>When I entered the company on 2019, La Segunda was going through a very rapid expansion of software development. The company was changing his core to world-class technologies (Guidewire and SAP) with Angular & React Frameworks on Front-end and implementing Openshift to orquestate everything as well.
-                  Because of this, different teams and providers were working on different projects at the same time. Every platform was starting to look different, and not only that, how the users felt the company and brand. Ofently, the same problems were solved different, even inside the same app.</p> -->
-                  <!-- <p>The B I O M A was created in order to unify interfaces, company's voice and tone, consolidate experiences and scale quickly.</p> -->
-                  <!-- <p>We needed to unify, consolidate, and scale quickly. But also unify the company's voice to the users, and with the same importance, the experiences must be felt the same way. A Design System was needed to bring order to that uncertainty.</p> -->
-
                   <p>When I entered the company on 2019, it was going through a very rapid expansion of software development. The B I O M A was created in order to unify interfaces, company's voice and tone, consolidate experiences and scale quickly.</p>
                   <p>It was a large process that started 2 years ago with some colors, type, buttons and input forms, growing from platforms that were needed.</p>
                   <p>It's also supported in a website, based on bootstrap in order to provide working code for developers and speed up the time to market.</p>
                   <hr>
-                  <p>Since it's creation has been applied in more than 20 different platforms.</p>
+                  <p>Since its creation it has been applied in more than 20 different platforms.</p>
                 </div>
 
-                <h4 class="h4 mb-3">What I did</h4>
+                <h3 class="h4 mb-3">What I did</h3>
                 <ul class="list-unstyled list-line mb-5">
                   <li>Product Designer</li>
-                  <li>HTML & CSS</li>
+                  <li>HTML &amp; CSS</li>
                 </ul>
 
-                <p><a href="javascript:void(0)" class="readmore disabled" disabled >Site Not Public</a></p>
+                <p><a href="javascript:void(0)" class="readmore disabled" aria-disabled="true">Site Not Public</a></p>
               </div>
-            </div>
+            </aside>
+
           </div>
         </div>
+      </div>
     </section>
 
-  </main><!-- End #main -->
+  </main>
 
-  <!-- ======= Footer ======= -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <hr>
       <div class="row align-items-center">
         <div class="col-sm-6">
-          <p class="mb-1"><i class="fa fa-copyright"></i> 2022 <i class="bi bi-triangle-fill"></i> Alejandro Laurora - Product Designer</p>
+          <p class="mb-1">
+            <small>&#169; <time datetime="2026">2026</time> Alejandro Laurora — Product Designer</small>
+          </p>
         </div>
         <div class="col-sm-6 social text-md-end">
-          <a href="mailto:alelaurora@gmail.com" aria-label="Open an email with my address in the 'to:' field"><span class="bi bi-envelope"></span></a>
-          <a href="https://www.instagram.com/alelaurora/" target="_blank" rel="noopener noreferrer" aria-label="Open my Instagram page on a new tab"><span class="bi bi-instagram"></span></a>
-          <a href="https://www.linkedin.com/in/alelaurora" target="_blank" rel="noopener noreferrer" aria-label="Open my LinkedIn page on a new tab"><span class="bi bi-linkedin"></span></a>
+          <a href="mailto:alelaurora@gmail.com" aria-label="Send email to Alejandro Laurora">
+            <span class="bi bi-envelope" aria-hidden="true"></span>
+          </a>
+          <a href="https://www.instagram.com/alelaurora/" target="_blank" rel="noopener noreferrer" aria-label="Alejandro Laurora on Instagram (opens in new tab)">
+            <span class="bi bi-instagram" aria-hidden="true"></span>
+          </a>
+          <a href="https://www.linkedin.com/in/alelaurora" target="_blank" rel="noopener noreferrer" aria-label="Alejandro Laurora on LinkedIn (opens in new tab)">
+            <span class="bi bi-linkedin" aria-hidden="true"></span>
+          </a>
         </div>
       </div>
     </div>
   </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Go back to top"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#main" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+  </a>
 
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
-  <!-- Template Main JS File -->
+  <!-- Main JS -->
   <script src="assets/js/main.js"></script>
 
 </body>

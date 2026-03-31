@@ -46,7 +46,21 @@
   const burgerMenu = select('.burger')
   on('click', '.burger', function(e) {
     burgerMenu.classList.toggle('active');
+    // Sync aria-expanded for screen readers — WCAG 4.1.2
+    const expanded = burgerMenu.getAttribute('aria-expanded') === 'true';
+    burgerMenu.setAttribute('aria-expanded', String(!expanded));
   })
+
+  // Also update aria-expanded when Bootstrap collapse events fire
+  const navbarCollapse = select('#main-navbar')
+  if (navbarCollapse) {
+    navbarCollapse.addEventListener('show.bs.collapse', () => {
+      if (burgerMenu) burgerMenu.setAttribute('aria-expanded', 'true');
+    })
+    navbarCollapse.addEventListener('hide.bs.collapse', () => {
+      if (burgerMenu) burgerMenu.setAttribute('aria-expanded', 'false');
+    })
+  }
 
   /**
    * Porfolio isotope and filter
@@ -64,8 +78,10 @@
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
           el.classList.remove('active');
+          el.setAttribute('aria-pressed', 'false');
         });
         this.classList.add('active');
+        this.setAttribute('aria-pressed', 'true');
 
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')

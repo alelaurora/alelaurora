@@ -1,4 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+/*
+  Satoshi — Deni Anggara (MIT licence)
+  Self-hosted: only woff2 — optimal format for the web (97%+ browser support).
+  ttf / woff / otf discarded.
+  Files expected at: assets/vendor/satoshi/
+
+  OPTION A — Variable font (one file covers all weights, recommended):
+*/
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../vendor/satoshi/Satoshi-Variable.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+/*
+  OPTION B — Individual weight files (uncomment if no variable font available):
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../vendor/satoshi/Satoshi-Light.woff2') format('woff2');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../vendor/satoshi/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../vendor/satoshi/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../vendor/satoshi/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../vendor/satoshi/Satoshi-Black.woff2') format('woff2');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+*/
 
 /*--------------------------------------------------------------
 # DESIGN TOKENS
@@ -21,10 +64,14 @@
   --type-xs:    0.64rem;   /*  10 px — labels, legal           */
   --type-sm:    0.8rem;    /*  13 px — captions, meta          */
   --type-base:  1rem;      /*  16 px — body copy               */
-  --type-md:    1.25rem;   /*  20 px — lead text, nav items    */
-  --type-lg:    1.563rem;  /*  25 px — subheadings             */
-  --type-xl:    1.953rem;  /*  31 px — section headings        */
-  --type-2xl:   2.441rem;  /*  39 px — display                 */
+  --type-md:    1.25rem;   /*  20 px — lead text               */
+  --type-lg:    1.563rem;  /*  25 px — brand name, nav items   */
+  --type-xl:    1.953rem;  /*  31 px — h3, subheadings         */
+  --type-2xl:   2.441rem;  /*  39 px — h2, section headings    */
+  --type-3xl:   3.052rem;  /*  49 px — h1, display             */
+
+  /* ── Accessible accent (WCAG AA 4.5:1 on white) ──────────── */
+  --Accent-accessible: #1e6b3e;
 
   /* ── Leading (line-height) ───────────────────────────────── */
   --leading-tight:   1.2;    /* headings                       */
@@ -59,7 +106,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', 'Inter', sans-serif;
   font-size: var(--type-base);
   font-weight: 300;
   line-height: var(--leading-base);
@@ -75,7 +122,7 @@ body {
 # where possible — light (300) for body, bold (700) for heads.
 --------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', 'Inter', sans-serif;
   font-weight: 700;
   line-height: var(--leading-tight);
   /* Tighten letter-spacing slightly at large sizes */
@@ -83,12 +130,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
-h1 { font-size: var(--type-2xl); }
-h2 { font-size: var(--type-xl);  }
-h3 { font-size: var(--type-lg);  }
-h4 { font-size: var(--type-md);  font-weight: 400; letter-spacing: 0; }
-h5 { font-size: var(--type-base);}
-h6 { font-size: var(--type-sm);  }
+h1 { font-size: var(--type-3xl); }
+h2 { font-size: var(--type-2xl); }
+h3 { font-size: var(--type-xl);  }
+h4 { font-size: var(--type-lg);  font-weight: 400; letter-spacing: 0; }
+h5 { font-size: var(--type-md);  }
+h6 { font-size: var(--type-base);}
+
+/* Responsive: scale down on small screens */
+@media (max-width: 576px) {
+  h1 { font-size: var(--type-2xl); }
+  h2 { font-size: var(--type-xl);  }
+  h3 { font-size: var(--type-lg);  }
+}
 
 p {
   margin-top: 0;
@@ -98,16 +152,62 @@ p {
 }
 
 a {
-  color: var(--Accent);
+  /* --Accent-accessible: #1e6b3e — 5.8:1 on white, passes WCAG AA */
+  color: var(--Accent-accessible);
   text-decoration: none;
 }
 a:hover {
-  color: var(--Accent);
+  color: var(--Accent-accessible);
 }
 
 /* Constrain running text to optimal measure */
 .text-measure {
   max-width: var(--measure);
+}
+
+/*--------------------------------------------------------------
+# SKIP NAVIGATION — WCAG 2.4.1
+--------------------------------------------------------------*/
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-2);
+  background: var(--Neutral-1);
+  color: white !important;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--type-base);
+  font-weight: 500;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--Accent-accessible);
+  outline-offset: 2px;
+}
+
+/*--------------------------------------------------------------
+# FOCUS STYLES — WCAG 2.4.7 / 2.4.11
+# Visible focus indicator for all interactive elements
+--------------------------------------------------------------*/
+:focus-visible {
+  outline: 3px solid var(--Accent-accessible);
+  outline-offset: 3px;
+}
+/* Override Bootstrap's default focus removal */
+.navbar-brand:focus-visible,
+.burger:focus-visible,
+.filters a:focus-visible,
+.readmore:focus-visible,
+.social a:focus-visible {
+  outline: 3px solid var(--Accent-accessible);
+  outline-offset: 3px;
+}
+/* Remove outline only when NOT keyboard-navigating */
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .visually-hidden {
@@ -179,7 +279,8 @@ a:hover {
   background-color: var(--Accent);
 }
 .filters a.active {
-  color: var(--Accent);
+  /* --Accent-accessible ensures 4.5:1 contrast on white — WCAG 1.4.3 */
+  color: var(--Accent-accessible);
 }
 .filters a.active::before {
   content: "";
@@ -431,11 +532,11 @@ a:hover {
   width: 100%;
 }
 
-/* Brand name: one step above body on the scale */
+/* Brand name: two steps above body — prominent but not heading-sized */
 .custom-navbar .navbar-brand {
-  font-size: var(--type-md);
+  font-size: var(--type-lg);
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   transition: color 0.2s ease;
 }
 .custom-navbar .navbar-brand i {
@@ -550,3 +651,24 @@ a:hover {
 --------------------------------------------------------------*/
 .logos-light { display: flex; }
 .logos-dark  { display: none; }
+
+/*--------------------------------------------------------------
+# REDUCED MOTION — WCAG 2.3.3
+# Respects OS-level "Reduce Motion" setting.
+# Disables scroll animations (AOS) for users who are sensitive
+# to motion (vestibular disorders, epilepsy, preference).
+--------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
